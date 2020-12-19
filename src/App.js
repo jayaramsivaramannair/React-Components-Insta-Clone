@@ -30,17 +30,15 @@ const App = () => {
         - if the `id` of the post matches `postId`, return a new post object with the desired values (use the spread operator).
         - otherwise just return the post object unchanged.
      */
+    const newPosts = posts.map((post) => {
+      if(post.id === postId && !post.hasOwnProperty('likedByUser')) {
+        return {...post, likes: post.likes + 1, likedByUser: true} //Added a liked property to the post so that the post is not liked more than once. 
+      } else {
+        return post
+      }
+    })
 
-     setPosts(() => {
-       posts.map((post) => {
-         if(post.id === postId) {
-            let newLikes = post.likes + 1;
-            return {...post, likes: newLikes}
-         } else {
-           return post
-         }
-       })
-     })
+    return setPosts(newPosts);
   };
 
   return (
