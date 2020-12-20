@@ -4,7 +4,7 @@ import './Posts.css';
 
 const Posts = (props) => {
   // 🔥 Make sure the parent of Posts is passing the right props!
-  const { likePost, posts } = props;
+  const { likePost, posts} = props;
 
   return (
     <div className='posts-container-wrapper'>

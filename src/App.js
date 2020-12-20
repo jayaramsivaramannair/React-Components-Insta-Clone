@@ -40,6 +40,7 @@ const App = () => {
 
     return setPosts(newPosts);
   };
+    
 
   return (
     <div className='App'>
